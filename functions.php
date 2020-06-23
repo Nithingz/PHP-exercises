@@ -53,8 +53,8 @@ This function has 1 parameter: price.
 calculateTotalPrice returns the total price after the tax of 13%.
 */
 function calculateTotalPrice($price){
-$total = $price + (($price * 13)/100);
-echo $total;
+	global $total;
+	$total = $price + (($price * 13)/100);
 }
 /*
 Declare the variable total
@@ -63,11 +63,13 @@ that calculateTotalPrice outputs
 when it is called (with the value for price parameter).
 */
 
+
 /*
 Print total.
 */
 
 calculateTotalPrice(200);
+echo $total;
 
 
 
@@ -116,14 +118,15 @@ echo "<hr style=\"margin 1rem 0\">";
 If the function for calculating the area of a triangle looks like this:
 */
 function calculateTriangleArea($base, $height) {
+	global $area;
     $area =  ($base * $height) / 2;
 }
 
 /*
 What can you do to make the $area accessible in global scope 
 (without using the return statement)?
-*/
 global $area;
+*/
 /*
 Choose the values for parameters and call the function.
 */
